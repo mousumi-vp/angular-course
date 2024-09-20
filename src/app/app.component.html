@@ -7,7 +7,7 @@
 
 
 <div class="courses">
-    @for (course of courses; track course.id; let index = $index;
+    @for (course of courses | slice:0:3; track course.id; let index = $index;
     let count=$count;let last=$last;let even=$even;let odd =$odd) {
 <course-card (courseSelected)="onCourseSelected($event)" [index]="index"
 [class.is-first]="$first"
@@ -19,6 +19,9 @@
     @empty {
         <h4>No data found!</h4>
     }
+
+    <button (click)="getDataFromApi()">Get Data</button>
+    <button (click)="postDataToApi()">Post Data</button>
 </div>
 
 

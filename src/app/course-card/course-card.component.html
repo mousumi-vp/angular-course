@@ -16,21 +16,21 @@
 <div class="course-description">
   {{course.longDescription}}
 </div>
-<div class="course-category">
-  @switch (course.category) {
-    @case ('ADVANCED') {
-      <div class="category">ADVANCED</div>
-    }
-    @case ('BEGINNER') {
-      <div class="category">BEGINNER</div>
-    }
-    @case ('INTERMEDIATE') {
-      <div class="category">INTERMEDIATE</div>
-    }
-    @default {
-      <div class="category">All Level</div>
-    }
-  }
-</div>
+<ng-container class="course-category">
+@switch (course.category) {
+@case ('ADVANCED') {
+<div class="category">ADVANCED</div>
+}
+@case ('BEGINNER') {
+<div class="category">BEGINNER</div>
+}
+@case ('INTERMEDIATE') {
+<div class="category">INTERMEDIATE</div>
+}
+@default {
+<div class="category">All Level</div>
+}
+}
+</ng-container>
 <button (click)="onClickBtn()">View Courses</button>
 </div>
